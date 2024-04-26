@@ -1,0 +1,605 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+
+/*====ABSOLUTE====*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+    scroll-padding-top: 75px;
+}
+body {
+    background-color: rgb(0, 0, 0);
+    font-family: 'Poppins', sans-serif;
+}
+
+/*====NAVIGATION'S BEGGINING====*/
+nav {
+    color: rgb(255, 255, 255);
+    padding: 15px 50px;
+    display: flex;
+    align-items: center;
+    /* box-shadow: 0px 1px 0px 0px #00000085; */
+    width: 100%;
+    font-weight: 600;
+    position: absolute;
+    /* background-color: rgb(0, 0, 0); */
+    /* backdrop-filter: blur(10px); */
+    z-index: 100;
+}
+span {
+    color: white;
+}
+#logo a{
+    color: rgb(255, 255, 255);
+    margin-right: auto;
+    font-size: 30px;
+    user-select: none;
+    text-decoration: none;
+}
+nav ul {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    list-style: none;
+    gap: 5rem;
+    font-size: 15px;
+    user-select: none;
+}
+nav ul a {
+    text-decoration: none;
+}
+.nav-li {
+    color: white;
+}
+.nav-li:hover {
+    border-bottom: 2px solid #ffffff;
+}
+i {
+    display: flex;
+    margin-left: auto;
+}
+i:hover {
+    cursor: pointer;
+}
+.bx-search {
+    font-size: 25px;
+}
+.menu, .bar {
+    display: none;
+}
+/*===========================================================================*/
+/*====@MEDIA 1200px====*/
+@media (max-width: 1200px) {
+    /*Navigation*/
+    nav {
+        justify-content: space-between;
+    }
+    #logo {
+        margin-right: 0;
+    }
+    i {
+        margin-left: 0;
+    }
+    nav ul {
+        position: static;
+        left: none;
+        transform: none;
+    }
+}
+/*====@MEDIA 850px====*/
+@media (max-width:850px) {
+    /*Navigation*/
+    nav * {
+        order: 10;
+    }
+    nav {
+        justify-content: space-between;
+    }
+    #logo {
+        order: 2
+    }
+    /*Menu animation beggining*/
+    .menu.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+        transition: 0.5s;
+    }
+    .menu.active .bar:nth-child(2) {
+        background-color: transparent;
+    }
+    .menu.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+        transition: 0.5s;
+    }
+    nav ul {
+        flex-direction: column;
+        position: fixed;
+        text-align: center;
+        padding: 10%;
+        background-color: rgb(255, 255, 255);
+        width: 100%;
+        height: 100%;
+        top: 12.6%;
+        left: 100%; /*Arrastam as opções do menu para fora de vista*/
+        font-size: 17px;
+        transition: 0.7s;
+    }
+    .nav-menu.active {
+        left: 0%;
+    }
+    .menu .bar:nth-child(1) {
+        transition: 0.5s;
+    }
+    .menu .bar:nth-child(2) {
+        transition: 0.5s;
+    }
+    .menu .bar:nth-child(3) {
+        transition: 0.5s;
+    }
+    /*Menu animation end*/
+    .menu {
+        display: block;
+        order: 1;
+    }
+    .bar {
+        display: block;
+        width: 28px;
+        height: 3px;
+        border-radius: 3px;
+        background-color: rgb(255, 255, 255);
+        margin: 5px auto;
+    }
+    .menu:hover {
+        .bar {
+            background-color:#808080;;
+        }
+        cursor: pointer;
+    }
+    .bx-search {
+        order: 3;
+    }
+}
+
+/*====INTRO BEGGINING====*/
+#intro {
+    position: relative;
+    color: white;
+    width: 100%;
+    height: 100vh;
+    background-image: url(images/introduction-background.png);
+    background-size: 70%;
+    background-position: center 45px;
+}
+#intro::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: inset 0px 0px 50px 50px rgb(0, 0, 0);
+    pointer-events: none;
+}
+#intro > h1 {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 60px;
+    font-weight: 50;
+    padding-top: 70px;
+    padding-left: 55px;
+    user-select: none;
+}
+.boxes {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    width: 100%;
+    top: 200px;
+    gap: 50px;
+}
+.boxes div {
+    width: 400px;
+    height: 400px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.295);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+.boxes h1 {
+    text-decoration: underline rgb(199, 0, 0) 5px;
+    user-select: none;
+}
+.boxes p {
+    color: rgba(255, 255, 255, 0.87);
+}
+.boxes p::selection {
+    background-color: rgb(209, 0, 0);
+    color: white;
+    font-weight: 400;
+}
+
+/*====FIRST CONTAINER'S BEGGINING====*/
+#first-container {
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-image: url(./images/fc-background5.jpg);
+    background-size: contain;
+    background-position: center -150px;
+    background-size: 101%;
+    position: relative;
+    text-align: center;
+    user-select: none;
+}
+#first-container::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    box-shadow: inset 0px -30px 40px 0px rgb(0, 0, 0);
+    pointer-events: none;
+}
+#first-container h1 {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 122px;
+    font-weight: 1000;
+    line-height: 1;
+    padding-top: 370px;
+    color: #ffffff;
+    text-shadow: 0px 0px 20px black;
+}
+#first-container h2 {
+    margin-top: -10px;
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    letter-spacing: 6.5px;
+    text-shadow: 0px 0px 20px black;
+    margin-bottom: 70px;
+}
+#first-container a {
+    text-decoration: none;
+    background-color: rgba(0, 0, 0, 0.253);
+    border: 1px solid white;
+    border-radius: 10px;
+    font-weight: 800;
+    font-size: 20px;
+    cursor: pointer;
+    user-select: none;
+    color: white;
+    padding: 10px 22px;
+}
+#first-container a:hover {
+    color: rgb(0, 0, 0);
+    background-color: #ffffff;
+    text-shadow: none;
+    transition: 0.2s ease-in-out;
+}
+/*===========================================================================*/
+/*====@MEDIA 1200px====*/
+@media (max-width: 1200px) {
+    /*#first-container*/
+    #first-container {
+        background-position: top left;
+    }
+    #fc-1half {
+        width: 50%;
+    }
+    .head-text {
+        font-size: 20px;
+        font-weight: 100;
+    }
+    
+    .neck-text {
+        padding: 20px 0;
+        font-size: 39px;
+        font-weight: 1000;
+    }
+    
+    .body-text {
+        font-size: 15px;
+        font-weight: 400;
+    }
+}
+/*====@MEDIA 850px====*/
+@media (max-width:850px) {
+    /*#first-container*/
+    #first-container {
+        background-size: 140%;
+        background-position: top left;
+    }
+    #fc-1half {
+        width: 92%;
+    }
+    .head-text {
+        font-size: 20px;
+        font-weight: 100;
+    }
+    
+    .neck-text {
+        font-size: 39px;
+        font-weight: 1000;
+    }
+    
+    .body-text {
+        font-size: 15px;
+        font-weight: 400;
+    }
+}
+
+/*====SECOND CONTAINER'S BEGGINING====*/
+#second-container {
+    width: 100%;
+    /* height: 100%; */
+    background-image: url(https://wallpaperaccess.com/full/1098122.jpg);
+    background-size: cover;
+    background-position: center;
+    padding-bottom: 20px;
+    padding-top: 50px;
+}
+#sc-1half h1 {
+    font-size: 60px;
+    font-weight: 50;
+    padding-left: 55px;
+    user-select: none;
+    color: white;
+}
+#sc-1half h3 {
+    color: white;
+    padding-left: 55px;
+    font-weight: 100;
+    font-size: 20px;
+    margin-bottom: -8px;
+}
+#sc-1half h3:hover {
+    text-decoration: underline rgb(199, 0, 0) 5px;
+    cursor: pointer;
+}
+#sc-2half {
+    display: flex;
+    /*flex-flow: row wrap;*/
+    padding-top: 10px;
+    gap: 10px;
+    overflow-x: scroll;
+    margin: 30px 55px 20px 55px;
+}
+.item {
+    width:30%;
+    flex: 1;
+    border-radius: 5px;
+}
+.item:hover {
+    filter: brightness(150%);
+    transition: filter 0.3s ease;
+    z-index: 1;
+    cursor: pointer;
+}
+/*Hide scrollbar for Chrome, Safari and Opera*/
+#sc-2half::-webkit-scrollbar {
+    display: none;
+}
+  
+/*Hide scrollbar for IE, Edge and Firefox*/
+#sc-2half {
+    -ms-overflow-style: none;  /*IE and Edge*/
+    scrollbar-width: none;  /*Firefox*/
+}
+#sc-3half {
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    width: 10%;
+    border-radius: 100px;
+    gap: 30px;
+}
+#left-arrow, #right-arrow {
+    font-size: 30px;
+    border: none;
+    border-radius: 100px;
+    color: rgb(255, 255, 255);
+    background-color: rgba(255, 0, 0, 0);
+}
+#left-arrow:hover, #right-arrow:hover {
+    cursor: pointer;
+    color: rgb(199, 0, 0);
+}
+
+/*===========================================================================*/
+
+/*====@MEDIA 1200px====*/
+@media (max-width: 1200px) {
+    /*#second-container*/
+    .item {
+        width:40%;
+    }
+}
+/*====@MEDIA 850px====*/
+@media (max-width:850px) {
+    /*#second-container*/
+    #sc-2half {
+        overflow-x: auto; /*Como tirar overflow (padrão)?*/
+        flex-flow: row wrap;
+    }
+    .item {
+        width:50%;
+    }
+    #sc-3half {
+        display: none;
+    }
+}
+@keyframes logo-animation {
+
+}
+
+/*====THIRD CONTAINER'S BEGGINING====*/
+#third-container {
+    background-color: #ffffff;
+    text-align: center;
+    padding: 50px 0 50px 0;
+    border-top-left-radius: 100px;
+    border-top-right-radius: 100px;
+}
+#tc-1half a:hover {
+    text-decoration: underline;
+}
+#tc-1half h3 {
+    font-size: 20px;
+    font-weight: 100;
+    user-select: none;
+}
+#tc-1half h1 a {
+    font-size: 50px;
+    font-weight: 1000;
+    line-height: 1;
+    text-decoration: none;
+    color: black;
+    user-select: none;
+}
+/*===========================================================================*/
+/*====@MEDIA 1200px====*/
+@media (max-width: 1200px) {
+
+}
+/*====@MEDIA 850px====*/
+@media (max-width:850px) {
+
+}
+@keyframes logo-animation {
+
+}
+
+.head-text {
+    font-size: 20px;
+    font-weight: 100;
+}
+/* .neck-text {
+    color: #00c9b5;
+    font-size: 50px;
+    font-weight: 1000;
+    line-height: 1;
+    /* padding: 10px 0;
+} */
+.body-text {
+    color: white;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.5;
+    letter-spacing: 6.5px;
+    text-shadow: 2px 2px 0px black;
+}
+
+/*====FOURTH CONTAINER'S BEGGINING====*/
+#fourth-container {
+    width: 100%;
+    height: 100%;
+    background-color: rgb(255, 255, 255);
+    border-top: 1px solid rgba(128, 128, 128, 0.377);
+    padding: 50px 50px 30px 50px;
+}
+#fourthc-1half {
+    display: flex;
+    height: 300px;
+    background-color: rgb(255, 255, 255);
+    gap: 100px;
+    flex: 1;
+    font-size: 20px;
+}
+.black-text {
+    color: rgb(41, 37, 37);
+}
+#info1 {
+    width: 40%;
+    background-color: rgb(255, 255, 255);
+}
+#info2 {
+    width: 15%;
+    background-color: rgb(255, 255, 255);
+}
+#info3 {
+    width: 30%;
+    background-color: rgb(255, 255, 255);
+}
+#info4 {
+    width: 15%;
+    background-color: rgb(255, 255, 255);
+}
+#info1 h4 {
+    color: gray;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+#info2 h4 a {
+    color: gray;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+#info3 h4 {
+    color: gray;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+#info4 h4 a {
+    color: gray;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+#info1 b {
+    font-weight: 600;
+}
+#info2 h4 a:hover {
+    color: black;
+    text-decoration: underline;
+}
+#info4 h4 a:hover {
+    color: black;
+    text-decoration: underline;
+}
+/*===========================================================================*/
+/*====@MEDIA 1200px====*/
+@media (max-width: 1200px) {
+
+}
+/*====@MEDIA 850px====*/
+@media (max-width:850px) {
+
+}
+@keyframes logo-animation {
+
+}
+
+/*====FOOTER BEGGINING====*/
+footer {
+    display: flex;
+    width: 100%;
+    height: 80px;
+    color: white;
+    font-size: 17px;
+    background-color: rgb(0, 0, 0);
+    align-items: center;
+    justify-content: center;
+}
+footer h5 {
+    font-weight: 200;
+}
+/*===========================================================================*/
+/*====@MEDIA 1200px====*/
+@media (max-width: 1200px) {
+
+}
+/*====@MEDIA 850px====*/
+@media (max-width:850px) {
+
+}
+@keyframes logo-animation {
+
+}
