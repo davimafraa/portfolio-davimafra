@@ -69,7 +69,7 @@ i:hover {
     font-size: 25px;
 }
 .menu, .bar {
-    display: none;
+    display: block;
 }
 /*===========================================================================*/
 /*====@MEDIA 1200px====*/
@@ -169,7 +169,7 @@ i:hover {
     color: white;
     width: 100%;
     height: 100vh;
-    background-image: url(images/introduction-background.png);
+    background-image: url(public/introduction-background.png);
     background-size: 70%;
     background-position: center 45px;
 }
@@ -227,7 +227,7 @@ i:hover {
     display: block;
     width: 100%;
     height: 100vh;
-    background-image: url(./images/fc-background5.jpg);
+    background-image: url(public/fc-background5.jpg);
     background-size: contain;
     background-position: center -150px;
     background-size: 101%;
