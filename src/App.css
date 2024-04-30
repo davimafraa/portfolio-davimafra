@@ -228,13 +228,20 @@ i:hover {
     width: 100%;
     height: 100vh;
     background-image: url(public/fc-background5.jpg);
-    background-size: contain;
+    background-size: cover;
     background-position: center -150px;
     background-size: 101%;
     position: relative;
     text-align: center;
     user-select: none;
 }
+
+@media (max-width: 1400px) {
+    #first-container {
+        background-position: center -100px;
+    }
+}
+
 #first-container::after {
     content: "";
     position: absolute;
